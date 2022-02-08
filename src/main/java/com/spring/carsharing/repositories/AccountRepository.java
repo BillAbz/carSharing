@@ -14,4 +14,8 @@ import java.util.function.Function;
 
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 
+    public abstract Account findByUsername(String username);
+
+
+
 }
