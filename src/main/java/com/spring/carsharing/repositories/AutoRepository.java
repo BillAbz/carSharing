@@ -14,4 +14,10 @@ import java.util.function.Function;
 
 public interface AutoRepository extends JpaRepository<Auto, Integer> {
 
+    void deleteByAutoId(Integer autoId);
+
+    Auto findByAutoId(Integer autoId);
+
+    List<Auto> findByNumberOfSeatsGreaterThanEqualAndDailyPriceLessThanEqualAndDailyPriceGreaterThanEqualAndAvailableIsOrderByAutoIdDesc(
+            int seats, double maxDailyPrice, double minDailyPrice, boolean available);
 }
